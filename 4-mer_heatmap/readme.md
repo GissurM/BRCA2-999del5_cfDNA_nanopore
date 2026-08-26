@@ -7,6 +7,7 @@ This script is based on FragmentomicsGenomBiol. Download the directory and set u
   - pysam (v0.23.0)
 - R (v4.3.3)
   - data.table (v1.18.2.1)
+
 Python packages used for statistics scripts only
 - scipy (v1.13.1)
 - sklearn (v1.6.1)
