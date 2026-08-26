@@ -2,10 +2,10 @@ Simple scripts that extract qwidth data from bam files into 5 bp bins and stores
 
 ## Dependencies
 
-Python - version 3.9+
-pandas (v2.2.3)
-numpy (v2.0.2)
-scipy (v1.13.1)
-sckit-learn (v1.6.1)
-pysam (v0.23.0)
-seaborn (v0.13.2)
+- Python - version 3.9+
+  - pandas (v2.2.3)
+  - numpy (v2.0.2)
+  - scipy (v1.13.1)
+  - sckit-learn (v1.6.1)
+  - pysam (v0.23.0)
+  - seaborn (v0.13.2)
