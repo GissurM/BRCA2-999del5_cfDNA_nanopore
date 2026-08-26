@@ -30,8 +30,8 @@ import pysam
 # ============================================================================
 # USER SETTINGS (edit these defaults for your environment)
 # ============================================================================
-DEFAULT_BAM_DIRECTORY = "/mnt/d/coronary_cfDNA"
-DEFAULT_OUTPUT_DIRECTORY = "/mnt/d/coronary_cfDNA/cfDNA_detailed_size_analysis"
+DEFAULT_BAM_DIRECTORY = "/set/to/your/bam/file/directory"
+DEFAULT_OUTPUT_DIRECTORY = "/set/to/your/output/directory"
 
 # If provided, use metadata sample->group mapping instead of regex inference.
 DEFAULT_SAMPLE_METADATA_CSV = None
@@ -40,9 +40,8 @@ DEFAULT_METADATA_GROUP_COL = "group"
 
 # Group inference regex rules used when metadata mapping is absent.
 GROUP_RULES = [
-    {"label": "stemi", "pattern": r"^cor_.*barcode[_-]?(0[1-5])\b"},
-    {"label": "recovery", "pattern": r"^rec_.*barcode[_-]?(0[6-9]|10)\b"},
-    {"label": "control", "pattern": r"^con_.*barcode[_-]?(1[1-5])\b"},
+    {"label": "stemi", "pattern": r"^control_.*barcode[_-]?(0[1-5])\b"},
+    {"label": "recovery", "pattern": r"^BRCA2_.*barcode[_-]?(0[6-9]|10)\b"},
 ]
 
 # Exclude BAM names containing any of these substrings.
