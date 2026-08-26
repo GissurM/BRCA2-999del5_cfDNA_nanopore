@@ -26,10 +26,10 @@ from sklearn.preprocessing import StandardScaler
 # USER SETTINGS (edit these when adapting to a new project)
 # ============================================================================
 # Input directory containing size distribution/count CSVs. Recursive search used.
-DATA_DIRECTORY = r"/mnt/d/coronary_cfDNA/cfDNA_detailed_size_analysis"
+DATA_DIRECTORY = r"/your/extract_qwidths/csv/files"
 
 # Output directory for figures and summary files.
-OUTPUT_DIRECTORY = r"/mnt/d/coronary_cfDNA/PCA_results_detailed"
+OUTPUT_DIRECTORY = r"/your/output/directory"
 
 # Fragment types to analyze. These names are used during file discovery.
 FRAGMENT_TYPES = ["mononucleosomal", "dinucleosomal", "trinucleosomal", "hmw"]
@@ -51,9 +51,8 @@ SAMPLE_NAME_COLUMN_CANDIDATES = ["bam_file", "sample", "sample_name", "filename"
 # Regex rules for inferring group from sample names when no group column exists.
 # EDIT THESE RULES for your own naming convention.
 GROUP_RULES = [
-    {"label": "stemi", "pattern": r"^cor_.*barcode[_-]?(0[1-5])\b"},
-    {"label": "recovery", "pattern": r"^rec_.*barcode[_-]?(0[6-9]|10)\b"},
-    {"label": "control", "pattern": r"^con_.*barcode[_-]?(1[1-5])\b"},
+    {"label": "BRCA2", "pattern": r"^BRCA2_.*barcode[_-]?(0[1-5])\b"},
+    {"label": "Control", "pattern": r"^control_.*barcode[_-]?(1[1-5])\b"},
 ]
 
 # Optional preferred order in legends/plots. Extra groups are appended alphabetically.
