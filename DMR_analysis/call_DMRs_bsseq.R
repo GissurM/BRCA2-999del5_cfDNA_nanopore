@@ -3,24 +3,6 @@
 # 02_call_dmrs.R
 #
 # DMR calling for cfDNA Nanopore methylation (modkit pileup input),
-# replicating the analytical framework of the cfMeDiP BRCA1/2 study
-# (Differential methylation of cfDNA via cfMeDiP) with data-type-appropriate
-# modifications:
-#   - Direct 5mC calls from modkit (not MeDIP density) -> real methylation
-#     fractions, so MEDIPS / relH / GoGe are dropped.
-#   - 5hmC ("h") rows excluded; DMRs called on 5mC ("m") only.
-#   - Coverage-aware beta-binomial test with shrinkage (DSS), which substitutes
-#     for the density-pooling stability MEDIPS relied on.
-#   - HYBRID output: DSS callDMR data-driven regions as primary biology,
-#     PLUS a 300-bp tiled table for comparability with the origin study.
-#   - Study thresholds preserved: |log2FC| >= 2 (on group-mean fractions)
-#     AND p < 0.01.
-#   - User coverage protocol enforced as an explicit post-hoc filter:
-#     a CpG is "covered" if Nvalid >= 1; a sample is kept in a region only if
-#     it has >= MIN_COVERED_CPGS covered CpGs there; a region is kept only if
-#     >= MIN_VALID_SAMPLES_PER_GROUP samples pass in EACH group. This step is
-#     what defends against the DSS sparse-smoothing artifact where CpGs covered
-#     in only one group receive spuriously low p-values.
 #
 # Usage:
 #   Rscript 02_call_dmrs.R \
